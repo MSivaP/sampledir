@@ -1,0 +1,140 @@
+
+1.SUDO : DONE
+
+2. Permissons : DONE
+chmod
+chgrp
+chown
+umask --->
+ how to check umask value
+ how to change the umask value tem and permanently
+ACL ---> 
+ how to grant the acl permission to the user and group. 
+ How to remove the acl permission.
+ How to check acl permission given or not to the directory/file
+STICKY BIT --->
+ How to grant sticky bit permission to the directory/file
+ How to remove sticky bit permission to the directory/file
+
+
+3.User/Group/Password Management :
+useradd
+usermod
+userdel
+
+groupadd
+groupmod
+groupdel
+
+passwd
+chage
+
+4.Disk Management : 
+I.Normal Method
+II.LVM
+III. Raid
+
+II.LVM
+	1.How to lv create partition. --- Done
+	2.How to extend the lvm. --- Done
+	3.How to reduce the lvm for xfs.  -- 
+	4.How to reduce the lvm for ext4. --  Done
+	5.What is snapshot and create the snapshot and merge into the lv. --- 
+	6.How get the lvm for restoring using vgcfgrestore. --- 
+	7.How to remove the disk from the server --- 
+	8.What is PE and LE --- Physical extend and logical extend	
+	9.How to get the disk from virtual server. --- 
+	10.How to get the disk from Physical server. --- Done
+	11.How to find the HBA card number or wwn number and lun numbers. --- systool -c fc_host -v(wwn)(node_name) and multipatb -ll (to get lun number)
+	12.What difference between -L and -l ---> L is for creating lvm using size of disk and -l based on PE
+	13.How to move lv's from one pv another pv
+
+
+5. Software Management : 
+1. How to create the locall repositery
+2. Roll Back Patching activity.
+
+3. How to integrate the satellite server with rhn. ===> we login the server and check the connectivity to rhn.
+We have to subscription-manager
+4. Patching Activity : 
+
+For every three months will do pacthing for preprod and production servers.
+Will open new cr for patching activity and will get it approved for the CR from DCM and Manager as well application team.
+Once we got approved all the stakeholders as per schedule.
+Vmware team take the snapshot of the scheduled servers. 
+we collect the prechecks like kernal version,crontabs and application jar,war versions will disbale the alerts
+and we inform the application team stopping the application like jars.
+we run the yum update command for patching.
+yum update --exclude=openjdk
+After pacthing we reboot the servers and will verify post checks like kernal versions,os versions, fstab entries 
+Everything looks good will start the application and will inform application team to check the functionality with help testing team.
+
+5. how to check what are the updates are available for patching? ---- yum check-update
+6. how to check what are security patches are available for patching? ----> yum check-update --security
+7. how to exclude one of the pacakge from patching? --- yum update --exclude=packages
+8. How to do permanently exclude one of the pacakge from update  ---- add the exclude=openjava parameter in the /etc/yum.conf
+9. How to upgrade/update one paticular package ---> yum update <package name>
+10. What is the difference between update/upgrade?
+11. What is the stagging location of yum before patch?
+12. Source Repositories
+		===================
+	1. Local repository
+	2. RHN repository
+	3. Satellite repository
+
+13. how to sync new product and register client machine with satellite
+14. What is your repo server?	
+	Ans : satellite server
+15. How your registering server with satellite server	
+	Ans : copy few files from satellite server to client machine
+			scp -r satelliteserverip/htdocs/rhel97.repo /etc/yum.repos.d/
+			scp -r satelliteserverip/htdocs/rhel97.config /etc/yum.repos.d/
+16. Some issue and client not getting pacakges from satellite server? how we can register server with satellite
+	Ans : login to satellite server
+			go to hosts ==> search for vm or server name ==> select and delete
+					or from client machine run below command
+					subscription-manager unregister
+
+		that means we are unregisterring server with satellite
+
+	again register server with satellite using subscription-manager register command
+
+17. how to check satellite integration status
+		subscription-manager list
+			or
+		subscription-manager status
+
+	
+6.Booting Procedure : Done 
+What is the booting procedure
+what is first process in the server--- systemd programm
+what pid of the systemd programm -->1
+How many run levels in linux ---> 7 -- power,single user mode,command without network services,command mode with network serveices,R&D,graphical user interface,reboot
+How many targers in linux -->5 
+	target 0--> power.target
+	target 1--> resuce.target
+	target 2--> multiuser.target
+	target 3 --> graphical.target
+	target 4 --> reboot.target
+
+7.Services : 
+
+vsftpd
+ssh
+nfs
+ntp
+dns
+httpd
+
+8. Server Performance Tools : 
+TOP
+1. Load average
+2. What is Zombie. How it will create the zombie and remove zombies in the server.
+3. 
+SAR
+
+9.SWAP MEMORY : Done
+ 1. how to create the swap memory using disk
+ 2. How to move swap task into main memory.
+ 3. 
+
