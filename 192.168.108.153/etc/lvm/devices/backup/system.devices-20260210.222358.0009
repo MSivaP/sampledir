@@ -1,0 +1,8 @@
+# LVM uses devices listed in this file.
+# Created by LVM command vgcreate pid 5617 at Tue Feb 10 22:23:58 2026
+# HASH=177126899
+PRODUCT_UUID=6a694d56-3c6f-e294-b480-308ad212c23c
+VERSION=1.1.9
+IDTYPE=devname IDNAME=/dev/sda3 DEVNAME=/dev/sda3 PVID=MVSny6U3PGKf8rCCiNwLfIbfelWetJ6h PART=3
+IDTYPE=devname IDNAME=/dev/sdb DEVNAME=/dev/sdb PVID=.
+IDTYPE=devname IDNAME=/dev/sdc DEVNAME=/dev/sdc PVID=dFdYUQdFSBf7f8qjcvcUFc59jZZRcyQX

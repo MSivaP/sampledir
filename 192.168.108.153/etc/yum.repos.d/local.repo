@@ -1,0 +1,10 @@
+[RHEL9_APPSTREAM]
+name=appstream
+baseurl=file:///media/AppStream
+gpgcheck=0
+enabled=1
+[RHEL9_BASEOS]
+name=baseos
+baseurl=file:///media/BaseOS
+gpgcheck=0
+enabled=1
