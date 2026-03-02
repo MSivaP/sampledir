@@ -1,5 +1,0 @@
-# regular expression patterns to allow package operations
-allow-pattern = ["^rhc-worker-playbook$"]
-
-# log verbosity level (error (default), warn, info, debug, trace)
-log-level = "error"

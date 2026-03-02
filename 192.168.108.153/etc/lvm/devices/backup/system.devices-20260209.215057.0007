@@ -1,7 +1,0 @@
-# LVM uses devices listed in this file.
-# Created by LVM command pvremove pid 1773 at Mon Feb  9 21:50:57 2026
-# HASH=114607066
-PRODUCT_UUID=6a694d56-3c6f-e294-b480-308ad212c23c
-VERSION=1.1.7
-IDTYPE=devname IDNAME=/dev/sda3 DEVNAME=/dev/sda3 PVID=MVSny6U3PGKf8rCCiNwLfIbfelWetJ6h PART=3
-IDTYPE=devname IDNAME=/dev/sdb DEVNAME=/dev/sdb PVID=.
